@@ -1,0 +1,12 @@
+//   Created by acer on 14-5-14.
+
+extends ../layout
+block content
+    h1= title
+    .content
+        ul
+        -var index = 0
+        each val,key in  users
+            li
+                a(href="userForm?username=#{key}") #{++index} : #{key}: #{val} edit
+                a(href="userDel?username=#{key}")  : #{key}: #{val} del
