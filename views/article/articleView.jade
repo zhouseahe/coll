@@ -5,7 +5,7 @@ block content
        p  #{result}
         input(type="hidden",id="articleKey", value="#{articleKey}")
         .context
-            a(href="vote?articleKey=#{articleKey}")  (赞) |
+            a(class="vote",href="#",key="#{articleKey}") span (赞) |
             a(href="comment?articleKey=#{articleKey}")  (评论)
 
         #votes
@@ -13,12 +13,22 @@ block content
         #comments
             p
             script.
-                function votes(){
-                    var key = $("#articleKey").val().split(':')[1];
-                }
-                function comments(){
+                $(".vote").click(function(){
+                    var key = $(this).attr('key');
+                    $.post(
+                        '../vote/vote',
+                        {articleKey:key},
+                        function(data){
 
-                }
-                votes();
+                        }, 'json'
+                    );
+                 });
+                 function votes(){
+                     var key = $("#articleKey").val();
+                 }
+                 function comments(){
+
+                 }
+                 votes();
 
 

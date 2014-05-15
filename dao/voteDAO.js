@@ -8,7 +8,6 @@ var client  = null;
 var voteKeyPrefix = "vote:";
 
 exports.setVote = function (articleId , userId ,callback){
-
     client = redisDB.openClient();
     client.sadd(voteKeyPrefix + articleId ,userId, function(error, data){
         if(error) {

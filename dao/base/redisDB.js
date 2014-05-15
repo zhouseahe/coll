@@ -15,4 +15,11 @@ function openClient(){
     return clientGenerator.getClient();
 }
 
+// transaction can exe by this way . it should use service to share client , then it's ok
+function multiExec(){
+    var clientshare = clientGenerator.getClient();
+
+    clientshare.close();
+}
+
 exports.openClient = openClient;

@@ -4,9 +4,8 @@
 
 exports.getId = function (arg , sperator){
     if(arguments.length<2){
-        return arg.split( ':') [1];
+        return arg.split( ':')[1];
     }else{
-        return arg.split(sperator) [1];
+        return arg.split(sperator)[1];
     }
-
 }

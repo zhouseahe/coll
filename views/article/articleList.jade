@@ -7,5 +7,5 @@ block content
         -var index = 0
         each val,key in  articles
             li
-                a(href="articleGet?articleKey=#{key}") #{++index} : #{key}: view
-                a(href="#{key}")  : #{key}: del
+                a(href="articleGet?articleKey=#{key}") #{++index}  : #{val}:  view |
+                a(href="#{key}")  : #{val}: del

@@ -45,7 +45,6 @@ var crud = {
             if(error) {
                 console.log(error);
             } else {
-                console.log(data);
                 callback(data);
             }
             client.end();

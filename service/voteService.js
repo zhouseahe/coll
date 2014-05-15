@@ -8,8 +8,9 @@ exports.queryVote = function (articleId,callback){
     voteDao.queryVote(articleId,callback);
 }
 
-exports.vote = function (articleId,userId ,callback){
-    voteDao.setVote(articleId,userId ,callback);
+exports.vote = function (articleKey,userId ,callback){
+    var key = util.getId(articleKey);
+    voteDao.setVote(key,userId ,callback);
 }
 exports.remVote = function (articleId,userId ,callback){
     voteDao.remVote(articleId,userId ,callback);
