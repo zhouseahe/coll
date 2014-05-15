@@ -3,8 +3,22 @@ block content
     h1= title
     .context
        p  #{result}
-
+        input(type="hidden",id="articleKey", value="#{articleKey}")
         .context
-            a(href="vote?articleKey=#{articleKey}") #{key}(赞) |
-            a(href="comment?articleKey=#{articleKey}") #{key} (评论)
+            a(href="vote?articleKey=#{articleKey}")  (赞) |
+            a(href="comment?articleKey=#{articleKey}")  (评论)
+
+        #votes
+
+        #comments
+            p
+            script.
+                function votes(){
+                    var key = $("#articleKey").val().split(':')[1];
+                }
+                function comments(){
+
+                }
+                votes();
+
 

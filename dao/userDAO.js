@@ -1,13 +1,15 @@
 /**
  * Created by acer on 14-5-14.
  */
-var redisDB = require('../dao/redisDB');
+var redisDB = require('../dao/base/redisDB');
 var client  = null;
+var userHash = 'users';
+
 var user = {};
 var crud = {
     get_user : function (key,callback){
         client = redisDB.openClient();
-        client.hget("users",key, function(error, data){
+        client.hget(userHash,key, function(error, data){
             if(error) {
                 console.log(error);
             } else {
@@ -20,7 +22,7 @@ var crud = {
     },
     set_user : function (key,value,callback){
         client = redisDB.openClient();
-        client.hset("users", key,value , function(error, data) {
+        client.hset(userHash ,key,value , function(error, data) {
             if(error) {
                 console.log(error);
             } else {
@@ -31,7 +33,7 @@ var crud = {
     },
     del_user : function(key,callback){
         client =redisDB.openClient();
-        client.hdel("users", key , function(error, data) {
+        client.hdel(userHash, key , function(error, data) {
             if(error) {
                 console.log(error);
             } else {
@@ -42,7 +44,7 @@ var crud = {
     },
     query_user :  function (callback){
         client = redisDB.openClient();
-        client.hgetall('users', function(error, users) {
+        client.hgetall(userHash, function(error, users) {
             console.log(" connection opened  ");
             if(error) {
                 console.log(error);

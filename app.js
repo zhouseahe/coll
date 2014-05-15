@@ -33,19 +33,22 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 
 //user crud
+app.get('/user/userList', user.userList);
 app.get('/user/userForm', user.userForm);
 app.get('/user/userSet', user.userSet);
 app.get('/user/userDel', user.userDel);
-app.get('/user/userList', user.userList);
+app.get('/user', user.userList);
 
 //article crud
+app.get('/article/articleList', article.articleList);
+app.get('/article', article.articleList);
 app.get('/article/articleSet', article.articleSet);
 app.get('/article/articleForm', article.articleForm);
 app.get('/article/articleGet', article.articleGet);
-app.get('/article/articleList', article.articleList);
+
 
 // vote
-app.get('/article/vote', article.vote);
+//app.get('/article/vote', article.vote);
 
 
 http.createServer(app).listen(app.get('port'), function(){

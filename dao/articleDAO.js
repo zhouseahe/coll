@@ -13,14 +13,17 @@ var crud = {
 
 }
  */
-var redisDB = require('../dao/redisDB');
+var redisDB = require('../dao/base/redisDB');
 var client  = null;
+
+var articleHash =  'articles';
 
 var crud = {
     set_article : function(article , callback){
         client = redisDB.openClient();
-        var articleKey =  "article:0011";
-        client.hset("articles",articleKey,article , function(error, data){
+        var articleKey =  "article:00111";
+        //JSON.stringify( obj )
+        client.hset(articleHash,articleKey,article , function(error, data){
             if(error) {
                 console.log(error);
             } else {
@@ -31,7 +34,7 @@ var crud = {
     },
     get_article : function (articleKey,callback){
         client = redisDB.openClient();
-        client.hget("articles",articleKey, function(error, data){
+        client.hget(articleHash,articleKey, function(error, data){
             if(error) {
                 console.log(error);
             } else {
@@ -43,7 +46,7 @@ var crud = {
     },
     query_article : function (callback){
         client = redisDB.openClient();
-        client.hgetall("articles", function(error, data){
+        client.hgetall(articleHash, function(error, data){
             if(error) {
                 console.log(error);
             } else {

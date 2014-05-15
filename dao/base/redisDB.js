@@ -1,5 +1,5 @@
 var redis   = require('redis');
-var config   = require('../config');
+var config   = require('../../config');
 
 var clientGenerator = {
     getClient : function(){
