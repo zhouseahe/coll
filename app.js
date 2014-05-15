@@ -6,6 +6,7 @@ var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
 var article = require('./routes/article');
+var vote = require('./routes/vote');
 var http = require('http');
 var path = require('path');
 var config   = require('./config');
@@ -46,11 +47,13 @@ app.get('/article/articleSet', article.articleSet);
 app.get('/article/articleForm', article.articleForm);
 app.get('/article/articleGet', article.articleGet);
 
-
 // vote
-//app.get('/article/vote', article.vote);
-
+app.post('/vote/vote', vote.vote);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
+});
+
+http.createServer(app).listen(app.post('port'), function(){
+    console.log('Express server listening on port ' + app.post('port'));
 });
