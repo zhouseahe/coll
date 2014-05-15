@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6b10ccc-917e-449c-9bca-fd5b76dbbb5b" name="Default" comment="" />
+    <list default="true" id="a6b10ccc-917e-449c-9bca-fd5b76dbbb5b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/article/articleList.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/article/articleView.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dao/commentDAO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dao/voteDAO.js" />
+      <change type="MOVED" beforePath="C:\Users\acer\WebstormProjects\seahe\views\user\result.jade" afterPath="$PROJECT_DIR$/views/result.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/article.js" afterPath="$PROJECT_DIR$/routes/article.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/articleDAO.js" afterPath="$PROJECT_DIR$/dao/articleDAO.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.jade" afterPath="$PROJECT_DIR$/views/index.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.jade" afterPath="$PROJECT_DIR$/views/layout.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/redisDB.js" afterPath="$PROJECT_DIR$/dao/redisDB.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/user.js" afterPath="$PROJECT_DIR$/routes/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/userDAO.js" afterPath="$PROJECT_DIR$/dao/userDAO.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="seahe.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,46 +39,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="userDAO.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dao/userDAO.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="32" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.0" vertical-offset="913" max-vertical-offset="1311">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userList.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/user/userList.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="71" selection-start="328" selection-end="328" vertical-scroll-proportion="-8.36" vertical-offset="0" max-vertical-offset="323">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="51" selection-start="723" selection-end="723" vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1007">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="article.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/article.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="40" selection-start="196" selection-end="196" vertical-scroll-proportion="0.38190955" vertical-offset="0" max-vertical-offset="398">
+            <state line="24" column="1" selection-start="762" selection-end="762" vertical-scroll-proportion="0.28643215" vertical-offset="342" max-vertical-offset="1273">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
+      <file leaf-file-name="util.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/util.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="33" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0" vertical-offset="514" max-vertical-offset="912">
+            <state line="8" column="37" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="323">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="voteDAO.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao/voteDAO.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="40" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="950">
               <folding />
             </state>
           </provider>
@@ -89,16 +87,23 @@
         <option value="$PROJECT_DIR$/views/user/result.jade" />
         <option value="$PROJECT_DIR$/views/user/userForm.jade" />
         <option value="$PROJECT_DIR$/views/user/userView.jade" />
-        <option value="$PROJECT_DIR$/views/layout.jade" />
-        <option value="$PROJECT_DIR$/views/index.jade" />
-        <option value="$PROJECT_DIR$/dao/articleDAO.js" />
         <option value="$PROJECT_DIR$/config" />
-        <option value="$PROJECT_DIR$/dao/redisDB.js" />
         <option value="$PROJECT_DIR$/config.js" />
-        <option value="$PROJECT_DIR$/dao/userDAO.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/user/userList.jade" />
+        <option value="$PROJECT_DIR$/dao/redisDB.js" />
+        <option value="$PROJECT_DIR$/views/layout.jade" />
+        <option value="$PROJECT_DIR$/dao/userDAO.js" />
         <option value="$PROJECT_DIR$/routes/user.js" />
+        <option value="$PROJECT_DIR$/views/result.jade" />
+        <option value="$PROJECT_DIR$/views/index.jade" />
+        <option value="$PROJECT_DIR$/views/article/articleForm.jade" />
+        <option value="$PROJECT_DIR$/views/article/articleList.jade" />
+        <option value="$PROJECT_DIR$/dao/articleDAO.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/dao/commentDAO.js" />
+        <option value="$PROJECT_DIR$/views/article/articleView.jade" />
+        <option value="$PROJECT_DIR$/common/util.js" />
+        <option value="$PROJECT_DIR$/dao/voteDAO.js" />
         <option value="$PROJECT_DIR$/routes/article.js" />
       </list>
     </option>
@@ -212,6 +217,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="article" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="seahe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="seahe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="seahe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="routes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -230,7 +257,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -242,10 +269,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="seahe" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -263,20 +286,15 @@
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\acer\WebstormProjects\seahe\views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\acer\WebstormProjects\seahe\views\user" />
       <recent name="C:\Users\acer\WebstormProjects\seahe\dao" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.app.js">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -287,15 +305,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -336,7 +362,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -344,18 +370,18 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39905363" sideWeight="0.83016104" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329653" sideWeight="0.5658858" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329653" sideWeight="0.4341142" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -375,37 +401,57 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/user/userForm.jade">
+    <entry file="file://$PROJECT_DIR$/routes/article.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="47" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="323">
+        <state line="27" column="44" selection-start="849" selection-end="849" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="1273">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="37" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/voteDAO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="40" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="950">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/article.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="6" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="304">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/article/articleForm.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="1" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="190" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/user/userForm.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="47" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="323" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/user/userView.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="304">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="304" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="49" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="855">
-          <folding />
-        </state>
+        <state line="18" column="49" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="855" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/user/userForm.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="53" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="323">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="23" selection-start="163" selection-end="163" vertical-scroll-proportion="-5.428571" vertical-offset="0" max-vertical-offset="342" />
+        <state line="9" column="53" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="323" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../demo/dao/redis.js">
@@ -433,184 +479,188 @@
         <state line="5" column="3" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="247" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/user/result.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="25" selection-start="57" selection-end="57" vertical-scroll-proportion="-1.52" vertical-offset="0" max-vertical-offset="190" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/user/userForm.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="47" selection-start="189" selection-end="189" vertical-scroll-proportion="-4.56" vertical-offset="0" max-vertical-offset="323">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/redis/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="955" column="0" selection-start="34081" selection-end="34081" vertical-scroll-proportion="0.3313783" vertical-offset="18032" max-vertical-offset="22971">
-          <folding />
-        </state>
+        <state line="955" column="0" selection-start="34081" selection-end="34081" vertical-scroll-proportion="0.3313783" vertical-offset="18032" max-vertical-offset="22971" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0" vertical-offset="509" max-vertical-offset="6213">
-          <folding />
-        </state>
+        <state line="33" column="0" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0" vertical-offset="509" max-vertical-offset="6213" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/node_modules/connect/node_modules/method-override/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.33333334" vertical-offset="699" max-vertical-offset="1121">
-          <folding />
-        </state>
+        <state line="48" column="0" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.33333334" vertical-offset="699" max-vertical-offset="1121" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/node_modules/connect/lib/middleware/urlencoded.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="0" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.5706215" vertical-offset="1109" max-vertical-offset="1463">
-          <folding />
-        </state>
+        <state line="74" column="0" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.5706215" vertical-offset="1109" max-vertical-offset="1463" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/node_modules/connect/lib/middleware/json.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="0" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.40960452" vertical-offset="1413" max-vertical-offset="1767">
-          <folding />
-        </state>
+        <state line="82" column="0" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.40960452" vertical-offset="1413" max-vertical-offset="1767" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/node_modules/connect/node_modules/morgan/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="0" selection-start="2268" selection-end="2268" vertical-scroll-proportion="0.31073445" vertical-offset="1752" max-vertical-offset="5472">
-          <folding />
-        </state>
+        <state line="103" column="0" selection-start="2268" selection-end="2268" vertical-scroll-proportion="0.31073445" vertical-offset="1752" max-vertical-offset="5472" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/node_modules/connect/node_modules/serve-favicon/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="1756" selection-end="1756" vertical-scroll-proportion="0.31073445" vertical-offset="1125" max-vertical-offset="2261">
-          <folding />
-        </state>
+        <state line="71" column="0" selection-start="1756" selection-end="1756" vertical-scroll-proportion="0.31073445" vertical-offset="1125" max-vertical-offset="2261" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/middleware.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="722">
-          <folding />
-        </state>
+        <state line="30" column="0" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="722" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/node_modules/connect/lib/middleware/query.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="906" selection-end="906" vertical-scroll-proportion="0.5706215" vertical-offset="558" max-vertical-offset="912">
-          <folding />
-        </state>
+        <state line="45" column="0" selection-start="906" selection-end="906" vertical-scroll-proportion="0.5706215" vertical-offset="558" max-vertical-offset="912" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/node_modules/connect/lib/proto.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="0" selection-start="5375" selection-end="5375" vertical-scroll-proportion="0.0" vertical-offset="3606" max-vertical-offset="4446">
-          <folding />
-        </state>
+        <state line="201" column="0" selection-start="5375" selection-end="5375" vertical-scroll-proportion="0.0" vertical-offset="3606" max-vertical-offset="4446" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/node_modules/connect/lib/connect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="1767">
-          <folding />
-        </state>
+        <state line="64" column="0" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="1767" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jade/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="1" selection-end="1" vertical-scroll-proportion="0.053672317" vertical-offset="0" max-vertical-offset="354">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="29" selection-start="54" selection-end="54" vertical-scroll-proportion="-2.28" vertical-offset="0" max-vertical-offset="228">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="59" selection-start="333" selection-end="333" vertical-scroll-proportion="-8.36" vertical-offset="0" max-vertical-offset="361">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/articleDAO.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="3" selection-start="210" selection-end="210" vertical-scroll-proportion="0.6683417" vertical-offset="0" max-vertical-offset="398">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="1" column="0" selection-start="1" selection-end="1" vertical-scroll-proportion="0.053672317" vertical-offset="0" max-vertical-offset="354" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../demo/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="31" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
-          <folding />
-        </state>
+        <state line="7" column="31" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="19" selection-start="139" selection-end="139" vertical-scroll-proportion="0.35945946" vertical-offset="0" max-vertical-offset="370" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="17" selection-start="175" selection-end="175" vertical-scroll-proportion="-5.32" vertical-offset="0" max-vertical-offset="247" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/redisDB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="32" selection-end="68" vertical-scroll-proportion="0.047738694" vertical-offset="0" max-vertical-offset="398">
-          <folding />
-        </state>
+        <state line="17" column="32" selection-start="420" selection-end="420" vertical-scroll-proportion="0.81155777" vertical-offset="0" max-vertical-offset="437" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/result.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="0.20375335" vertical-offset="0" max-vertical-offset="373" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="29" selection-start="180" selection-end="180" vertical-scroll-proportion="0.42964825" vertical-offset="0" max-vertical-offset="398">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/user/userView.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="32" selection-end="32" vertical-scroll-proportion="-1.52" vertical-offset="0" max-vertical-offset="304">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/userDAO.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="32" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.0" vertical-offset="913" max-vertical-offset="1311">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/user/userList.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="71" selection-start="328" selection-end="328" vertical-scroll-proportion="-8.36" vertical-offset="0" max-vertical-offset="323">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="33" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0" vertical-offset="514" max-vertical-offset="912">
-          <folding />
-        </state>
+        <state line="9" column="29" selection-start="180" selection-end="180" vertical-scroll-proportion="0.42964825" vertical-offset="0" max-vertical-offset="398" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="51" selection-start="723" selection-end="723" vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1007">
+        <state line="36" column="7" selection-start="1054" selection-end="1054" vertical-scroll-proportion="1.1934674" vertical-offset="171" max-vertical-offset="931" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/user/userList.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="14" selection-start="0" selection-end="328" vertical-scroll-proportion="-6.84" vertical-offset="0" max-vertical-offset="323" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/user/userView.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="1" selection-end="339" vertical-scroll-proportion="0.050938338" vertical-offset="0" max-vertical-offset="373" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/user/userForm.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="42" selection-start="257" selection-end="257" vertical-scroll-proportion="0.45844504" vertical-offset="0" max-vertical-offset="373" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="39" selection-start="1278" selection-end="1278" vertical-scroll-proportion="0.6683417" vertical-offset="627" max-vertical-offset="1121" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="24" selection-start="66" selection-end="66" vertical-scroll-proportion="-2.24" vertical-offset="20" max-vertical-offset="418" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/commentDAO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="398" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/article/articleForm.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="46" selection-start="365" selection-end="365" vertical-scroll-proportion="0.5603217" vertical-offset="0" max-vertical-offset="373" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/userDAO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="11" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1235" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/articleDAO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="20" selection-start="570" selection-end="570" vertical-scroll-proportion="0.04522613" vertical-offset="191" max-vertical-offset="969" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/article/articleList.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="14" selection-start="174" selection-end="174" vertical-scroll-proportion="-6.08" vertical-offset="0" max-vertical-offset="304" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/article/articleView.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="63" selection-start="160" selection-end="160" vertical-scroll-proportion="-5.32" vertical-offset="0" max-vertical-offset="304" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.WebStorm7/system/extLibs/nodejs-v0.10.26-src/core-modules-sources/lib/net.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="903" column="10" selection-start="23189" selection-end="23189" vertical-scroll-proportion="0.0" vertical-offset="16664" max-vertical-offset="25137" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.WebStorm7/system/extLibs/nodejs-v0.10.26-src/core-modules-sources/lib/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="0" selection-start="2753" selection-end="2753" vertical-scroll-proportion="0.0" vertical-offset="856" max-vertical-offset="5377" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.WebStorm7/system/extLibs/nodejs-v0.10.26-src/core-modules-sources/lib/module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="496" column="9" selection-start="13861" selection-end="13861" vertical-scroll-proportion="0.31407034" vertical-offset="8938" max-vertical-offset="9956" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="37" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/voteDAO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="40" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="950">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/article.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="196" selection-end="196" vertical-scroll-proportion="0.38190955" vertical-offset="0" max-vertical-offset="398">
+        <state line="24" column="1" selection-start="762" selection-end="762" vertical-scroll-proportion="0.28643215" vertical-offset="342" max-vertical-offset="1273">
           <folding />
         </state>
       </provider>

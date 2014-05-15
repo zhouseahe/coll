@@ -5,6 +5,7 @@
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
+var article = require('./routes/article');
 var http = require('http');
 var path = require('path');
 var config   = require('./config');
@@ -31,11 +32,21 @@ if ('development' == app.get('env')) {
 // request url
 app.get('/', routes.index);
 
+//user crud
 app.get('/user/userForm', user.userForm);
 app.get('/user/userSet', user.userSet);
 app.get('/user/userDel', user.userDel);
 app.get('/user/userList', user.userList);
-app.get('/users', user.list);
+
+//article crud
+app.get('/article/articleSet', article.articleSet);
+app.get('/article/articleForm', article.articleForm);
+app.get('/article/articleGet', article.articleGet);
+app.get('/article/articleList', article.articleList);
+
+// vote
+app.get('/article/vote', article.vote);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

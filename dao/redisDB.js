@@ -11,4 +11,8 @@ var clientGenerator = {
     }
 }
 
-exports.clientGenerator = clientGenerator;
+function openClient(){
+    return clientGenerator.getClient();
+}
+
+exports.openClient = openClient;
