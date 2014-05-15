@@ -1,4 +1,5 @@
-var redis   = require('redis');
+var redis  = require("redis"),
+    client = redis.createClient(), multi;
 var config   = require('../../config');
 
 var clientGenerator = {
@@ -10,7 +11,6 @@ var clientGenerator = {
         return gclient;
     }
 }
-
 function openClient(){
     return clientGenerator.getClient();
 }

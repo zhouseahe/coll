@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6b10ccc-917e-449c-9bca-fd5b76dbbb5b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/articleService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/jquery-1.11.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/vote.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/voteService.js" />
-      <change type="MOVED" beforePath="C:\Users\acer\WebstormProjects\seahe\dao\redisDB.js" afterPath="$PROJECT_DIR$/dao/base/redisDB.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/article.js" afterPath="$PROJECT_DIR$/routes/article.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/articleDAO.js" afterPath="$PROJECT_DIR$/dao/articleDAO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/article/articleView.jade" afterPath="$PROJECT_DIR$/views/article/articleView.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/commentDAO.js" afterPath="$PROJECT_DIR$/dao/commentDAO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.jade" afterPath="$PROJECT_DIR$/views/layout.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/userDAO.js" afterPath="$PROJECT_DIR$/dao/userDAO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/voteDAO.js" afterPath="$PROJECT_DIR$/dao/voteDAO.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/base/redisDB.js" afterPath="$PROJECT_DIR$/dao/base/redisDB.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="seahe.iws" />
@@ -59,10 +48,19 @@
       <file leaf-file-name="articleDAO.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dao/articleDAO.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="42" selection-start="452" selection-end="452" vertical-scroll-proportion="0.42964825" vertical-offset="0" max-vertical-offset="1026">
+            <state line="32" column="38" selection-start="832" selection-end="832" vertical-scroll-proportion="0.5728643" vertical-offset="114" max-vertical-offset="1159">
               <folding>
                 <element signature="e#0#210#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="redisDB.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao/base/redisDB.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="437">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,13 +101,13 @@
         <option value="$PROJECT_DIR$/routes/vote.js" />
         <option value="$PROJECT_DIR$/service/articleService.js" />
         <option value="$PROJECT_DIR$/routes/article.js" />
-        <option value="$PROJECT_DIR$/dao/base/redisDB.js" />
         <option value="$PROJECT_DIR$/dao/commentDAO.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/dao/userDAO.js" />
         <option value="$PROJECT_DIR$/service/voteService.js" />
         <option value="$PROJECT_DIR$/dao/voteDAO.js" />
         <option value="$PROJECT_DIR$/dao/articleDAO.js" />
+        <option value="$PROJECT_DIR$/dao/base/redisDB.js" />
       </list>
     </option>
   </component>
@@ -370,7 +368,11 @@
       <created>1400115531476</created>
       <updated>1400115531476</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add service layer and modify some method  &#10;jade include jquery 1.11.1 ...dao doc ...&#10;">
+      <created>1400122512240</created>
+      <updated>1400122512240</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -411,7 +413,8 @@
     </option>
     <MESSAGE value="articles module added , design database &#10;" />
     <MESSAGE value="oh one left&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="oh one left&#10;" />
+    <MESSAGE value="add service layer and modify some method  &#10;jade include jquery 1.11.1 ...dao doc ...&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="add service layer and modify some method  &#10;jade include jquery 1.11.1 ...dao doc ...&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -634,13 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/base/redisDB.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="23" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="437">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="290" column="10" selection-start="6500" selection-end="6500" vertical-scroll-proportion="0.3316583" vertical-offset="5378" max-vertical-offset="6213">
@@ -696,16 +692,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/article.js">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="24" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="779">
+        <state line="167" column="40" selection-start="3090" selection-end="3098" vertical-scroll-proportion="7.972362" vertical-offset="0" max-vertical-offset="3629">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
+    <entry file="file://$PROJECT_DIR$/routes/article.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="40" selection-start="3090" selection-end="3098" vertical-scroll-proportion="7.972362" vertical-offset="0" max-vertical-offset="3629">
+        <state line="17" column="24" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="779">
           <folding />
         </state>
       </provider>
@@ -717,9 +713,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dao/base/redisDB.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="437">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dao/articleDAO.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="42" selection-start="452" selection-end="452" vertical-scroll-proportion="0.42964825" vertical-offset="0" max-vertical-offset="1026">
+        <state line="32" column="38" selection-start="832" selection-end="832" vertical-scroll-proportion="0.5728643" vertical-offset="114" max-vertical-offset="1159">
           <folding>
             <element signature="e#0#210#0" expanded="false" />
           </folding>
