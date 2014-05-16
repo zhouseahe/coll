@@ -3,5 +3,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: ' Seahe Club' });
+  res.render('index', { title: ' Seahe Club login' });
 };

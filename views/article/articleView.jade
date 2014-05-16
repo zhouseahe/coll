@@ -6,29 +6,51 @@ block content
         input(type="hidden",id="articleKey", value="#{articleKey}")
         .context
             a(class="vote",href="#",key="#{articleKey}") span (赞) |
-            a(href="comment?articleKey=#{articleKey}")  (评论)
-
-        #votes
-
-        #comments
-            p
+        .context
+            input(type="text",id="comment",placeholder='say something...')
+            a(class="comment",href="#") (评论)
+        #context
+            p(id="mycomment")
+            p(id="comments")
             script.
                 $(".vote").click(function(){
-                    var key = $(this).attr('key');
                     $.post(
                         '../vote/vote',
-                        {articleKey:key},
+                        {articleKey:$("#articleKey").val()},
                         function(data){
-
+                            console.log(data);
                         }, 'json'
                     );
                  });
-                 function votes(){
+                $(".comment").click(function(){
+                    $.post(
+                        '../comment/comment',
+                        {
+                            articleKey:$("#articleKey").val(),
+                            comment : $("#comment").val()
+                        },
+                        function(data){
+                           $("#mycomment").text("@myself : " + data.msg);
+                        }, 'json'
+                    );
+                 });
+                 function getVotes(){
                      var key = $("#articleKey").val();
                  }
-                 function comments(){
-
+                 function getComments(){
+                    var key = $("#articleKey").val();
+                    $.post(
+                        '../comment/queryComment',
+                        {
+                            articleKey:$("#articleKey").val()
+                        },
+                        function(data){
+                            var cs = "";
+                            $.each( data.result, function( key, value ) {
+                              cs += ".comm " +  key + "---" + value;
+                            });
+                           $("#comments").text(cs);
+                        }, 'json'
+                    );
                  }
-                 votes();
-
-
+                 getComments();
