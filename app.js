@@ -69,7 +69,7 @@ app.get('/article/articleGet', article.articleGet);
 app.post('/vote/vote', vote.vote);
 
 // comment
-app.post('/comment/comment', comment.comment);
+app.post('/comment/comment',oauth.requireUser, comment.comment);
 app.post('/comment/queryComment', comment.queryComment);
 app.post('/comment/queryCommentJade', comment.queryCommentJade);
 
