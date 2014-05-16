@@ -5,7 +5,7 @@ block content
        p  #{result}
         input(type="hidden",id="articleKey", value="#{articleKey}")
         .context
-            a(class="vote",href="#",key="#{articleKey}") span (赞) |
+            a(class="vote",href="#",key="#{articleKey}") span (赞)
         .context
             input(type="text",id="comment",placeholder='say something...')
             a(class="comment",href="#") (评论)
@@ -45,9 +45,9 @@ block content
                             articleKey:$("#articleKey").val()
                         },
                         function(data){
-                            var cs = "";
+                            var cs = " ";
                             $.each( data.result, function( key, value ) {
-                              cs += ".comm " +  key + "---" + value;
+                              cs += " , @" +  key + "---" + value ;
                             });
                            $("#comments").text(cs);
                         }, 'json'

@@ -22,3 +22,11 @@ exports.queryComment = function (req,res){
         res.json({ result : data});
     });
 }
+
+exports.queryCommentJade = function (req,res){
+    var articleKey =  req.param('articleKey');
+    var comment =  req.param('comment');
+    commentService.queryComment(articleKey, function(data){
+        res.render('comment/comments', { comments : data });
+    });
+}
