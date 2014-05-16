@@ -2,8 +2,11 @@
  * Module dependencies.
  */
 var express = require('express');
-var session = require('express-session')
-    , RedisStore = require('connect-redis')(session);
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+// pass the express to the connect redis module
+// allowing it to inherit from session.Store
+var RedisStore = require('connect-redis')(session);
 var routes = require('./routes');
 var user = require('./routes/user');
 var article = require('./routes/article');
@@ -27,13 +30,16 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 
-app.use(require('cookie-parser')('zhoushaohe'));
+app.use(cookieParser('zhoushaohe'));
+app.use(session({ store: new RedisStore }));
+/* something not config properly
 var myStore = new RedisStore({ url: "redis://127.0.01:6379" });
 app.use(session({ cookie: {
     path    : '/',
     httpOnly: false,
     maxAge  : 24*60*60*1000
 }, store: myStore, secret: 'zhoushaohe' }));
+*/
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
