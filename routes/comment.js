@@ -9,7 +9,8 @@ var commentService = require('../service/commentService');
 exports.comment = function (req,res){
     var articleKey =  req.param('articleKey');
     var comment =  req.param('comment');
-    commentService.comment(articleKey,'jry' ,comment , function(data){
+    var username =  req.session.username;
+    commentService.comment(articleKey,username ,comment , function(data){
         res.json({ msg : data });
     });
 }
@@ -18,7 +19,7 @@ exports.queryComment = function (req,res){
     var articleKey =  req.param('articleKey');
     var comment =  req.param('comment');
     commentService.queryComment(articleKey, function(data){
-        console.log(JSON.stringify(data));
+       // console.log(JSON.stringify(data));
         res.json({ result : data});
     });
 }

@@ -9,17 +9,18 @@ var voteService = require('../service/voteService');
 
 exports.vote = function (req,res){
     var articleKey =  req.param('articleKey');
-    putVoteUser(articleKey,'jry',function(data){
+    var username =  req.session.username;
+    putVoteUser(articleKey,username,function(data){
         res.send(data);
     });
 }
 
 function calScore(){
-
+    //TODO
 }
 
 function incVotes(){
-
+    //TODO
 }
 
 function putVoteUser(id,user,callback){

@@ -15,6 +15,7 @@ exports.articleSet = function(req,res){
     var link =  querystring.parse(arg).link;
     var poster =  querystring.parse(arg).poster;
     var article = 'title:'+title +',link:'+link +",poster:" + poster;
+    article += req.session.username;
     articleService.setArticle(article,function(data){
         res.render('result', { title: " 操作结果： ",result : data });
     });
