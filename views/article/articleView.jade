@@ -30,7 +30,7 @@ block content
                             comment : $("#comment").val()
                         },
                         function(data){
-                           $("#mycomment").text("@myself : " + data.msg);
+                           $("#mycomment").text("@myself : " + $("#comment").val());
                         }, 'json'
                     );
                  });
