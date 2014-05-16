@@ -1,5 +1,6 @@
 /**
  * Created by acer on 14-5-14.
+ * 每篇文章对应 一个 comments:id
  */
 var redisDB = require('../dao/base/redisDB');
 var client  = null;

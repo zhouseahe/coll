@@ -45,7 +45,6 @@ var crud = {
     query_user :  function (callback){
         client = redisDB.openClient();
         client.hgetall(userHash, function(error, users) {
-            console.log(" connection opened  ");
             if(error) {
                 console.log(error);
             } else {
