@@ -48,6 +48,10 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.get("*",function(req,res ,next){
+    res.locals.session  = req.session;
+    next();
+});
 // request url , oauth.requireUser
 app.get('/' ,routes.index);
 
