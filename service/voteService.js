@@ -18,3 +18,8 @@ exports.remVote = function (articleId,userId ,callback){
 exports.isVote = function (articleId,userId ,callback){
     voteDao.isVoted(articleId,userId ,callback);
 }
+
+exports.countVote =function (articleKey,callback){
+    var key  = util.getId(articleKey);
+    voteDao.countVote(key,callback);
+}
