@@ -67,6 +67,7 @@ app.get('/article/articleGet', article.articleGet);
 
 // vote
 app.post('/vote/vote', vote.vote);
+app.post('/vote/countVote', vote.countVote);
 
 // comment
 app.post('/comment/comment',oauth.requireUser, comment.comment);
@@ -77,6 +78,7 @@ app.post('/comment/queryCommentJade', comment.queryCommentJade);
 // log
 app.get('/login', login.login);
 app.get('/toLogin', login.toLogin);
+app.get('/logout', login.logout);
 
 
 http.createServer(app).listen(app.get('port'), function(){
