@@ -11,3 +11,9 @@ exports.login = function (req, res){
 exports.toLogin = function(req, res){
     res.render('login', { title: ' Seahe Club' });
 }
+
+exports.logout = function(req, res){
+    // it doesn't work ,  clear session should be done
+    req.session.destroy();
+    res.render('login', { title: ' Seahe Club' });
+}
