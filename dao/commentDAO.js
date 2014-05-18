@@ -15,7 +15,7 @@ exports.setComment =  function(articleKey,userId ,comment , callback){
     multi.incr(commentSeq+articleKey);
     multi.exec(function (err, value){
         var commentKey =  commentKeyPrefix + value;
-        //JSON.stringify( obj )
+        //JSON.stringify( articleKey )
         client.hset(commentHash+articleKey,commentKey,userId + comment , function(error, data){
             if(error) {
                 console.log(error);

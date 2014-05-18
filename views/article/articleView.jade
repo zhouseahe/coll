@@ -6,6 +6,7 @@ block content
         input(type="hidden",id="articleKey", value="#{articleKey}")
         .context
             a(class="vote",href="#",key="#{articleKey}") span (赞)
+            span(id="votes")
         .context
             input(type="text",id="comment",placeholder='say something...')
             a(class="comment",href="#") (评论)
@@ -30,12 +31,26 @@ block content
                             comment : $("#comment").val()
                         },
                         function(data){
-                           $("#mycomment").text("@myself : " + $("#comment").val());
+                           if(typeof(data.login)!='undefined'){
+                                $("#mycomment").text(" need login ");
+                                return false;
+                           }
+                           getComments();
+                           //$("#mycomment").text("@myself : " + $("#comment").val());
                         }, 'json'
                     );
                  });
                  function getVotes(){
                      var key = $("#articleKey").val();
+                        $.post(
+                        '../vote/countVote',
+                        {
+                             articleKey:$("#articleKey").val()
+                        },
+                            function(data){
+                                $("#votes").text("(" + data.result+"人已赞" + ")");
+                            }, 'json'
+                            );
                  }
                  function getComments(){
                     var key = $("#articleKey").val();
@@ -47,10 +62,11 @@ block content
                         function(data){
                             var cs = " ";
                             $.each( data.result, function( key, value ) {
-                              cs += " , @" +  key + "---" + value ;
+                              cs = "@" +  key + "---" + value + " , " + cs ;
                             });
                            $("#comments").text(cs);
                         }, 'json'
                     );
                  }
+                 getVotes();
                  getComments();

@@ -7,6 +7,13 @@ var querystring = require('querystring');
 var voteService = require('../service/voteService');
 
 
+exports.countVote = function (req,res){
+    var articleKey =  req.param('articleKey');
+    voteService.countVote(articleKey,function(data){
+        res.json({ result : data});
+    });
+}
+
 exports.vote = function (req,res){
     var articleKey =  req.param('articleKey');
     var username =  req.session.username;

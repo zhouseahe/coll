@@ -56,3 +56,15 @@ exports.queryVote = function (articleId,callback){
         client.end();
     });
 }
+
+exports.countVote = function (articleId,callback){
+    client = redisDB.openClient();
+    client.scard(voteKeyPrefix + articleId , function(error, data){
+        if(error) {
+            console.log(error);
+        } else {
+            callback(data);
+        }
+        client.end();
+    });
+}
