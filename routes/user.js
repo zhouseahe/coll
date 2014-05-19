@@ -38,7 +38,6 @@ exports.userSet = function(req,res){
 }
 
 exports.userList = function(req,res){
-    console.log(" userlist ");
     userDao.query_user(function(data){
         res.render('user/userList', { title: '用户列表：', users :data });
     });

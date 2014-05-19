@@ -7,15 +7,14 @@ var userHash = 'users';
 
 var user = {};
 var crud = {
-    get_user : function (key,callback){
+    get_user : function (key,password ,callback){
         client = redisDB.openClient();
         client.hget(userHash,key, function(error, data){
             if(error) {
                 console.log(error);
             } else {
-                user.username = key;
-                user.pwd = data;
-                callback(user);
+                console.log(data);
+                callback(data == password);
             }
             client.end();
         });

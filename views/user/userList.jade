@@ -6,7 +6,9 @@ block content
     .content
         ul
         -var index = 0
+        if users!=null{
         each val,key in  users
             li
                 a(href="userForm?username=#{key}") #{++index} : #{key}: #{val} edit
                 a(href="userDel?username=#{key}")  : #{key}: #{val} del
+        }

@@ -1,11 +1,22 @@
 /**
  * Created by acer on 14-5-15.
  */
+var loginService = require('../service/loginService');
 
 exports.login = function (req, res){
     var username =  req.param('username');
-    req.session.username = username;
-    res.render('index', { title: ' Seahe Club' });
+    var password =  req.param('password');
+
+    loginService.validUser(username,password , function (data){
+        if(data == true){
+            req.session.username = username;
+            res.render('index', { title: ' Seahe Club' });
+        }else {
+            res.render('login', { title: ' Seahe Club' })
+        }
+    });
+
+
 }
 
 exports.toLogin = function(req, res){
