@@ -13,6 +13,8 @@ exports.setVote = function (articleId , userId ,callback){
         if(error) {
             console.log(error);
         } else {
+            //直接统计次数 , there is a bug
+            //this.countVote(articleId,callback);
             callback(data);
         }
         client.end();
@@ -38,8 +40,6 @@ exports.isVoted = function (articleId , userId,callback ){
         if(error) {
             console.log(error);
         } else {
-            //直接统计次数
-            this.countVote(articleId,callback);
             //callback(data);
         }
         client.end();

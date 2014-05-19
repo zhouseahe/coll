@@ -19,7 +19,8 @@ block content
                         '../vote/vote',
                         {articleKey:$("#articleKey").val()},
                         function(data){
-                            $("#votes").text("(" + data.result+"人已赞" + ")");
+                            getVotes();
+                           // $("#votes").text("(" + data.result+"人已赞" + ")");
                         }, 'json'
                     );
                  });
