@@ -18,7 +18,7 @@ exports.vote = function (req,res){
     var articleKey =  req.param('articleKey');
     var username =  req.session.username;
     putVoteUser(articleKey,username,function(data){
-        res.send(data);
+        res.json({ result : data});
     });
 }
 

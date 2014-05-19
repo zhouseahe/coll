@@ -49,6 +49,16 @@ var crud = {
             }
             client.end();
         });
+        /*
+        client.hgetall(articleHash, function(error, data){
+            if(error) {
+                console.log(error);
+            } else {
+                callback(data);
+            }
+            client.end();
+        });
+        */
     }
 
 }

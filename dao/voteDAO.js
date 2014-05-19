@@ -38,7 +38,9 @@ exports.isVoted = function (articleId , userId,callback ){
         if(error) {
             console.log(error);
         } else {
-            callback(data);
+            //直接统计次数
+            this.countVote(articleId,callback);
+            //callback(data);
         }
         client.end();
     });

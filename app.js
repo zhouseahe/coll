@@ -52,6 +52,11 @@ app.get("*",function(req,res ,next){
     res.locals.session  = req.session;
     next();
 });
+
+app.post("*",function(req,res ,next){
+    res.locals.session  = req.session;
+    next();
+});
 // request url , oauth.requireUser
 app.get('/' ,routes.index);
 

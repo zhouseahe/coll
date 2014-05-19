@@ -19,7 +19,7 @@ block content
                         '../vote/vote',
                         {articleKey:$("#articleKey").val()},
                         function(data){
-                            console.log(data);
+                            $("#votes").text("(" + data.result+"人已赞" + ")");
                         }, 'json'
                     );
                  });
