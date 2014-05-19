@@ -4,6 +4,8 @@ html
     title= 'seahe node redis'
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/javascripts/jquery-1.11.1.js')
+    script(src='/javascripts/underscore.js')
+    script(src='/javascripts/backbone.js')
     script(src='/javascripts/common.js')
   body
     a(class='button', href='/') 首页  |
@@ -15,4 +17,10 @@ html
          $("#refresh").click(function(){
              refresh_();
          });
+         var object = {};
+         _.extend(object, Backbone.Events);
+         object.on("alert", function(msg) {
+            alert("Triggered " + msg);
+         });
+         object.trigger("alert", "an event by backbone.js ");
     block content

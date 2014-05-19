@@ -12,7 +12,7 @@ exports.login = function (req, res){
             req.session.username = username;
             res.render('index', { title: ' Seahe Club' });
         }else {
-            res.render('login', { title: ' Seahe Club' })
+            res.render('login', { title: ' Seahe Club' });
         }
     });
 
