@@ -12,9 +12,13 @@ var user = require('./routes/user');
 var article = require('./routes/article');
 var vote = require('./routes/vote');
 var comment = require('./routes/comment');
+var chat = require('./routes/chat');
 var login = require('./routes/login');
 var http = require('http');
 var path = require('path');
+
+var WebSocketServer = require('websocket').server;
+
 
 var config   = require('./config');
 var oauth   = require('./common/oauth');
@@ -60,6 +64,8 @@ app.post("*",function(req,res ,next){
 // request url , oauth.requireUser
 app.get('/' ,routes.index);
 
+app.get('/chathall' ,chat.reghall);
+
 //user crud
 app.get('/user/userList', user.userList);
 app.get('/user/userForm', user.userForm);
@@ -90,10 +96,49 @@ app.get('/toLogin', login.toLogin);
 app.get('/logout', login.logout);
 
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+server = http.createServer(app);
+server.listen(app.get('port'),function(){
+    console.log('Express server listening on port ' + app.get('port'));
+});
+server.listen(app.post('port'),function(){
+    console.log('Express server listening on port ' + app.get('port'));
 });
 
-http.createServer(app).listen(app.post('port'), function(){
-    console.log('Express server listening on port ' + app.post('port'));
+wsServer = new WebSocketServer({
+    httpServer: server,
+    autoAcceptConnections: false
 });
+
+function originIsAllowed(request) {
+    // put logic here to detect whether the specified origin is allowed.
+    if ( request.httpRequest.headers['sec-websocket-protocol'] !== 'seahe' ) {
+        request.reject();
+    }
+    return true;
+}
+
+wsServer.on('request', function(request) {
+    if (!originIsAllowed(request)) {
+        // Make sure we only accept requests from an allowed origin
+        request.reject();
+        console.log((new Date()) + ' Connection from origin ' + request.origin + ' rejected.');
+        return;
+    }
+
+    var connection = request.accept('seahe', request.origin);
+    console.log((new Date()) + ' Connection accepted.');
+    connection.on('message', function(message) {
+        if (message.type === 'utf8') {
+            console.log('Received Message: ' + message.utf8Data);
+            connection.sendUTF(message.utf8Data );
+        }
+        else if (message.type === 'binary') {
+            console.log('Received Binary Message of ' + message.binaryData.length + ' bytes');
+            connection.sendBytes(message.binaryData);
+        }
+    });
+    connection.on('close', function(reasonCode, description) {
+        console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
+    });
+});
+

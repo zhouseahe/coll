@@ -1,0 +1,39 @@
+//   Created by acer on 14-5-20.
+extends ../layout
+block content
+    h1= title
+    h4 欢迎 @#{session.username} 加入
+    .br
+    .chatting
+        p
+
+    input(type="text",id="words" name="words")
+    a(class='send', href='#') | |  发送
+    .button
+    a(class='button', href='/leavehall') 离开  |
+    script.
+      $(function () {
+          window.WebSocket = window.WebSocket || window.MozWebSocket;
+          var connection = new WebSocket('ws://127.0.0.1:1988/','seahe');
+          connection.onopen = function () {
+                connection.send("come on");
+          };
+          connection.onerror = function (error) {
+              console.log('connection failed !');
+          };
+          connection.onmessage = function (message) {
+              // try to decode json (I assume that each message from server is json)
+              try {
+                  var json = JSON.parse(message.data);
+                  $(".chatting").text(json);
+              } catch (e) {
+                  console.log('This doesn\'t look like a valid JSON: ', message.data);
+                  return;
+              }
+              // handle incoming message
+          };
+          $(".send").click(function(){
+              var words = $("#words").val();
+              connection.send(words);
+          });
+      });

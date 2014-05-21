@@ -11,6 +11,8 @@
     "cookie-parser": "*",
     "jade": "*",
     "redis":"*",
-    "connect-redis":"*"
+    "connect-redis":"*",
+    "websocket":"*",
+    "websocket-server": "*"
   }
 }

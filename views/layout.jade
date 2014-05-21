@@ -9,6 +9,7 @@ html
     script(src='/javascripts/common.js')
   body
     a(class='button', href='/') 首页  |
+    a(class='button', href='/chathall') 聊天室 |
     a(id="refresh" , class='button' ,href='#') 刷新  |
     a(class='button', href='/toLogin') 登录 |
     a(class='button', href='/logout') 退出  |
@@ -22,5 +23,5 @@ html
          object.on("alert", function(msg) {
             alert("Triggered " + msg);
          });
-         object.trigger("alert", "an event by backbone.js ");
+         //object.trigger("alert", "an event by backbone.js ");
     block content
