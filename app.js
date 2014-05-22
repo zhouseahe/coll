@@ -121,16 +121,18 @@ function originIsAllowed(request) {
 }
 
 var count = 1;
+var word = 1;
 wsServer.on('request', function(request) {
     if (!originIsAllowed(request)) {
         request.reject();
         return;
     }
     var connection = request.accept('seahe', request.origin);
+    console.log(request);
     manager.put(count++,connection);
     connection.on('message', function(message) {
         if (message.type === 'utf8') {
-            sender.broadcast(manager.getUCMap(),"server : " + message.utf8Data);
+            sender.broadcast(manager.getUCMap(), word +" : " + message.utf8Data);
             //connection.sendUTF("server : " + message.utf8Data );
         }
         else if (message.type === 'binary') {
@@ -141,5 +143,3 @@ wsServer.on('request', function(request) {
         console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
     });
 });
-
-
