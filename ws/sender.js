@@ -3,7 +3,6 @@
  */
 
 exports.broadcast = function(map,msg){
-    console.log('broadcast ....')
     for(var key in map ){
             map[key].sendUTF(msg);
     }
