@@ -63,9 +63,9 @@ block content
                         function(data){
                             var cs = " ";
                             $.each( data.result, function( key, value ) {
-                              cs = "@" +  key + "---" + value + " , " + cs ;
+                              cs =  '<br/> ' + "@" +  key + "- -" + value + " , " + cs;
                             });
-                           $("#comments").text(cs);
+                           $("#comments").html(cs);
                         }, 'json'
                     );
                  }
