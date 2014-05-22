@@ -7,6 +7,9 @@ var session = require('express-session');
 // pass the express to the connect redis module
 // allowing it to inherit from session.Store
 var RedisStore = require('connect-redis')(session);
+var http = require('http');
+var path = require('path');
+
 var routes = require('./routes');
 var user = require('./routes/user');
 var article = require('./routes/article');
@@ -14,8 +17,9 @@ var vote = require('./routes/vote');
 var comment = require('./routes/comment');
 var chat = require('./routes/chat');
 var login = require('./routes/login');
-var http = require('http');
-var path = require('path');
+
+var manager = require('./ws/manager');
+var sender = require('./ws/sender');
 
 var WebSocketServer = require('websocket').server;
 
@@ -96,44 +100,40 @@ app.get('/toLogin', login.toLogin);
 app.get('/logout', login.logout);
 
 
-server = http.createServer(app);
-server.listen(app.get('port'),function(){
+httpServer = http.createServer(app);
+httpServer.listen(app.get('port'),function(){
     console.log('Express server listening on port ' + app.get('port'));
 });
-server.listen(app.post('port'),function(){
+httpServer.listen(app.post('port'),function(){
     console.log('Express server listening on port ' + app.get('port'));
 });
 
 wsServer = new WebSocketServer({
-    httpServer: server,
+    httpServer: httpServer,
     autoAcceptConnections: false
 });
 
 function originIsAllowed(request) {
-    // put logic here to detect whether the specified origin is allowed.
-    if ( request.httpRequest.headers['sec-websocket-protocol'] !== 'seahe' ) {
+    if ( request.httpRequest.headers['sec-websocket-protocol'].indexOf('seahe')==-1 ) {
         request.reject();
     }
     return true;
 }
 
+var count = 1;
 wsServer.on('request', function(request) {
     if (!originIsAllowed(request)) {
-        // Make sure we only accept requests from an allowed origin
         request.reject();
-        console.log((new Date()) + ' Connection from origin ' + request.origin + ' rejected.');
         return;
     }
-
     var connection = request.accept('seahe', request.origin);
-    console.log((new Date()) + ' Connection accepted.');
+    manager.put(count++,connection);
     connection.on('message', function(message) {
         if (message.type === 'utf8') {
-            console.log('Received Message: ' + message.utf8Data);
-            connection.sendUTF(message.utf8Data );
+            sender.broadcast(manager.getUCMap(),"server : " + message.utf8Data);
+            //connection.sendUTF("server : " + message.utf8Data );
         }
         else if (message.type === 'binary') {
-            console.log('Received Binary Message of ' + message.binaryData.length + ' bytes');
             connection.sendBytes(message.binaryData);
         }
     });
@@ -141,4 +141,5 @@ wsServer.on('request', function(request) {
         console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
     });
 });
+
 
