@@ -4,7 +4,6 @@ block content
     h1= title
     .br
     .chatting
-        p
 
     input(type="text",id="words" name="words")
     a(class='send', href='#') | |  发送
@@ -15,14 +14,13 @@ block content
           window.WebSocket = window.WebSocket || window.MozWebSocket;
           var connection = new WebSocket('ws://127.0.0.1:1988/','seahe');
           connection.onopen = function () {
-               //connection.send("--");
           };
           connection.onerror = function (error) {
-              console.log('connection failed !');
+              console.log(' connection failed !');
           };
           connection.onmessage = function (message) {
               //var json = JSON.parse(message.data);
-              $(".chatting").text(message.data);
+              $(".chatting").html($(".chatting").html() +  '<br/> ' + message.data );
           };
           $(".send").click(function(){
               connection.send($("#words").val());
