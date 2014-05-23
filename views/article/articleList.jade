@@ -4,8 +4,9 @@ block content
     h1= title
     .content
         ul
-        -var index = 0
-        each val,key in  articles
-            li
-                a(href="articleGet?articleKey=#{key}") #{++index}  : #{val}:  view |
-                a(href="#{key}")  : #{val}: del
+        if(articles!=null)
+             -var index = 0
+            each val,key in  articles
+                li
+                    a(href="articleGet?articleKey=#{key}") #{++index}  : #{val}:  view |
+                    a(href="#{key}")  : #{val}: del
