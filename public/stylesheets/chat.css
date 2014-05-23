@@ -1,0 +1,6 @@
+.chatting{
+
+    border: solid 1px red;
+    overflow-y:scroll;
+    height:380px;
+}
