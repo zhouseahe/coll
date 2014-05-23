@@ -13,7 +13,6 @@ var crud = {
             if(error) {
                 console.log(error);
             } else {
-                console.log(data);
                 callback(data == password);
             }
             client.end();
