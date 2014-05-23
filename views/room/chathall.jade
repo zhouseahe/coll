@@ -2,27 +2,31 @@
 extends ../layout
 block content
     h1= title
-    .br
+    .username #{session.username}
     .chatting
+        ul(id='list')
 
-    input(type="text",id="words" name="words")
+    input(type="text",id="words" ,name="words")
     a(class='send', href='#') | |  发送
     .button
-    a(class='button', href='/leavehall') 离开  |
+    a(class='button', href='/') 离开  |
     script.
       $(function () {
           window.WebSocket = window.WebSocket || window.MozWebSocket;
-          var connection = new WebSocket('ws://127.0.0.1:1988/','seahe');
+          var connection = new WebSocket('ws://192.168.9.58:1988/','seahe');
           connection.onopen = function () {
+              connection.send($(".username").text());
           };
           connection.onerror = function (error) {
               console.log(' connection failed !');
           };
           connection.onmessage = function (message) {
               //var json = JSON.parse(message.data);
-              $(".chatting").html($(".chatting").html() +  '<br/> ' + message.data );
+              $("#list").html( '<ul> ' + message.data +'</ul> ' + $("#list").html()  );
           };
           $(".send").click(function(){
               connection.send($("#words").val());
+              $("#words").val("");
           });
+
       });
