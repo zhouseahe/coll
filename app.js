@@ -20,6 +20,7 @@ var login = require('./routes/login');
 
 var manager = require('./ws/manager');
 var sender = require('./ws/sender');
+var util = require('./common/util');
 
 var WebSocketServer = require('websocket').server;
 
@@ -115,31 +116,31 @@ wsServer = new WebSocketServer({
 
 function originIsAllowed(request) {
     if ( request.httpRequest.headers['sec-websocket-protocol'].indexOf('seahe')==-1 ) {
-        request.reject();
+        //request.reject();
     }
     return true;
 }
 
-var count = 1;
-var word = 1;
 wsServer.on('request', function(request) {
     if (!originIsAllowed(request)) {
         request.reject();
         return;
     }
     var connection = request.accept('seahe', request.origin);
-    console.log(request);
-    manager.put(count++,connection);
+    var username = util.getCookieKey(request.httpRequest.headers.cookie,'username');
+    connection.username=username;
+    manager.put(username,connection);
     connection.on('message', function(message) {
         if (message.type === 'utf8') {
-            sender.broadcast(manager.getUCMap(), word +" : " + message.utf8Data);
-            //connection.sendUTF("server : " + message.utf8Data );
+            sender.broadcast(manager.getUCMap(), connection.username +" : " + message.utf8Data);
         }
         else if (message.type === 'binary') {
             connection.sendBytes(message.binaryData);
         }
     });
+
     connection.on('close', function(reasonCode, description) {
-        console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
+        // manager.remove();
+        console.log('closed');
     });
 });
