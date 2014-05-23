@@ -12,8 +12,7 @@ block content
     a(class='button', href='/') 离开  |
     script.
       $(function () {
-          window.WebSocket = window.WebSocket || window.MozWebSocket;
-          var connection = new WebSocket('ws://192.168.9.58:1988/','seahe');
+          var connection = SingletonWebSocket.getConnection();
           connection.onopen = function () {
               connection.send($(".username").text());
           };
