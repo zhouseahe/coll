@@ -6,10 +6,10 @@ var loginService = require('../service/loginService');
 exports.login = function (req, res){
     var username =  req.param('username');
     var password =  req.param('password');
-
     loginService.validUser(username,password , function (data){
         if(data == true){
             req.session.username = username;
+            res.cookie('username',username , { maxAge: 900000, httpOnly: true });
             res.render('index', { title: ' Seahe Club' });
         }else {
             res.render('login', { title: ' Seahe Club' });
