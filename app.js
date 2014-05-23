@@ -18,13 +18,6 @@ var comment = require('./routes/comment');
 var chat = require('./routes/chat');
 var login = require('./routes/login');
 
-var manager = require('./ws/manager');
-var sender = require('./ws/sender');
-var util = require('./common/util');
-
-var WebSocketServer = require('websocket').server;
-
-
 var config   = require('./config');
 var oauth   = require('./common/oauth');
 var app = express();
@@ -94,12 +87,10 @@ app.post('/comment/comment',oauth.requireUser, comment.comment);
 app.post('/comment/queryComment', comment.queryComment);
 app.post('/comment/queryCommentJade', comment.queryCommentJade);
 
-
 // log
 app.get('/login', login.login);
 app.get('/toLogin', login.toLogin);
 app.get('/logout', login.logout);
-
 
 httpServer = http.createServer(app);
 httpServer.listen(app.get('port'),function(){
@@ -108,39 +99,6 @@ httpServer.listen(app.get('port'),function(){
 httpServer.listen(app.post('port'),function(){
     console.log('Express server listening on port ' + app.get('port'));
 });
+exports.httpServer = httpServer;
 
-wsServer = new WebSocketServer({
-    httpServer: httpServer,
-    autoAcceptConnections: false
-});
-
-function originIsAllowed(request) {
-    if ( request.httpRequest.headers['sec-websocket-protocol'].indexOf('seahe')==-1 ) {
-        //request.reject();
-    }
-    return true;
-}
-
-wsServer.on('request', function(request) {
-    if (!originIsAllowed(request)) {
-        request.reject();
-        return;
-    }
-    var connection = request.accept('seahe', request.origin);
-    var username = util.getCookieKey(request.httpRequest.headers.cookie,'username');
-    connection.username=username;
-    manager.put(username,connection);
-    connection.on('message', function(message) {
-        if (message.type === 'utf8') {
-            sender.broadcast(manager.getUCMap(), connection.username +" : " + message.utf8Data);
-        }
-        else if (message.type === 'binary') {
-            connection.sendBytes(message.binaryData);
-        }
-    });
-
-    connection.on('close', function(reasonCode, description) {
-        // manager.remove();
-        console.log('closed');
-    });
-});
+var wsServer = require('./ws/wsServer.js');
