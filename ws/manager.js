@@ -16,8 +16,8 @@ exports.isLive = function (username){
     map.hasOwnProperty(username);
 }
 
-exports.getOneConnection =function (){
-
+exports.getOneConnection =function (username){
+    return map[username];
 }
 
 exports.getUCMap = function(){

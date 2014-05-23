@@ -7,3 +7,8 @@ exports.broadcast = function(map,msg){
             map[key].sendUTF(msg);
     }
 }
+
+exports.send2username = function(map,username ,msg){
+    map[username].sendUTF(msg);
+   // connection.sendUTF(msg);
+}
