@@ -9,7 +9,7 @@ block content
         .split
         .right
             p online
-            p zaixian ..
+            ul(id='online')
     .send
     input(type="text",id="words" ,name="words")
     a(class='send', href='#')  发送
@@ -26,8 +26,18 @@ block content
               console.log(' connection failed !');
           };
           connection.onmessage = function (message) {
-              //var json = JSON.parse(message.data);
-              $("#list").html( '<li> ' + message.data +'</li> ' + $("#list").html()  );
+              var msg = message.data;
+              if(isBroadUsers(msg)){
+                  var users = parseUsers(msg);
+                  $("#online").html(generatorList(users));
+                  return false;
+              }
+              if(isLeaveUser(msg)){
+                  $('ul li[id='+parseUser(msg) + ']').remove();
+                  return false;
+              }
+              $("#list").html( '<li> ' + msg +'</li> ' + $("#list").html());
+              //var msg = JSON.parse(message.data);
           };
           $(".send").click(function(){
               connection.send($("#words").val());
