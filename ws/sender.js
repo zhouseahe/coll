@@ -8,7 +8,9 @@ exports.broadcast = function(map,msg){
     }
 }
 
-exports.send2username = function(map,username ,msg){
-    map[username].sendUTF(msg);
+exports.send2username = function(map,sender ,reciever ,msg){
+    console.log(sender + " : " + reciever);
+    map[reciever].sendUTF(sender+":"+msg);
+    map[sender].sendUTF(sender+":"+msg);
    // connection.sendUTF(msg);
 }
