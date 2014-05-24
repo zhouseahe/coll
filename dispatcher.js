@@ -71,7 +71,7 @@ app.get('/user/userDel', user.userDel);
 app.get('/user', user.userList);
 
 //article crud
-app.get('/article/articleList', article.articleList); 
+app.get('/article/articleList', article.articleList);
 app.get('/article', article.articleList);
 app.get('/article/articleSet', oauth.requirePoster,article.articleSet);
 app.get('/article/articleForm',oauth.requireUser, article.articleForm);
