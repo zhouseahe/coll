@@ -30,24 +30,28 @@ wsServer.on('request', function(request) {
     var username = util.getCookieKey(request.httpRequest.headers.cookie,'username');
     connection.username=username;
     manager.put(username,connection);
+    //上线时，1、推送所有在线用户   2、仅推送上线用户
+    var users = manager.onlineUsers();
+    wsServer.broadcast("@wsXXon"+users);
     connection.on('message', function(message) {
         if (message.type === 'utf8') {
             var msg = message.utf8Data;
-            if(msg.indexOf("@@")>-1){
-                var content = util.getPeerContent(msg,"@@");
+            if(util.checkPeerSend(msg)){
+                var content = util.getPeerContent(msg);
                 sender.send2username(manager.getUCMap(),connection.username,content[1],content[0]);
             }else{
                 wsServer.broadcast( connection.username +" : " + msg);
+                //sender.broadcast(manager.getUCMap(), connection.username +" : " + message.utf8Data);
             }
-            //sender.broadcast(manager.getUCMap(), connection.username +" : " + message.utf8Data);
         }
         else if (message.type === 'binary') {
             connection.sendBytes(message.binaryData);
         }
     });
-
     connection.on('close', function(reasonCode, description) {
         manager.remove(connection.username);
+        //下线时，推送下线用户
+        wsServer.broadcast("@wsXXdn" + username);
     });
 });
 
