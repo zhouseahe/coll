@@ -1,6 +1,7 @@
 /**
  * Created by acer on 14-5-22.
  */
+var chatService = require('../service/chatService');
 
 exports.broadcast = function(map,msg){
     for(var key in map ){
@@ -14,7 +15,7 @@ exports.send2username = function(map,sender ,reciever ,msg){
         map[reciever].sendUTF(sender+":"+msg);
         map[sender].sendUTF(sender+":"+msg);
     }else{
-        map[sender].sendUTF("send failed ： no such user");
+        chatService.leaveMsg(reciever,sender+":"+msg);
+        map[sender].sendUTF("  send offline msg  ");
     }
-
 }
