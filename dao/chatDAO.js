@@ -1,37 +1,38 @@
 /**
  * Created by acer on 14-5-20.
+ * leave:username
+ *      list
+ *          ' sender : msg '
+ *      hash
+ *          sender , msg
+ *
  */
 
 var redisDB = require('../dao/base/redisDB');
+var MsgList = "msg:";
+var client ;
 
-var clientPub = redisDB.openClient();
-var clientSub = redisDB.openClient();
-
-exports.publish = function(userid,msg,callback){
-    clientPub.publish("chatroom",userid + " : " + msg);
+exports.fetchMsg = function(username,callback){
+    client = redisDB.openClient();
+    client.lrange(MsgList+username , 0 ,-1  ,function(error, data){
+        if(error) {
+            console.log(error);
+        } else {
+            callback(data);
+        }
+        client.del(MsgList+username);
+        client.end();
+    });
 }
 
-exports.subscribe = function(){
-
+exports.leaveMsg = function(reciever,msg){
+    client = redisDB.openClient();
+    client.lpush(MsgList+reciever,msg, function(error, data){
+        if(error) {
+            console.log(error);
+        } else {
+            console.log(" leave msg ---- : " + data);
+        }
+        client.end();
+    });
 }
-
-/*
-client1.on("subscribe", function (channel, count) {
-    client2.publish("a nice channel", "I am sending a message.");
-    client2.publish("a nice channel", "I am sending a second message.");
-    client2.publish("a nice channel", "I am sending my last message.");
-});
-
-client1.on("message", function (channel, message) {
-    console.log("client1 channel " + channel + ": " + message);
-    msg_count += 1;
-    if (msg_count === 3) {
-        client1.unsubscribe();
-        client1.end();
-        client2.end();
-    }
-});
-
-client1.incr("did a thing");
-client1.subscribe("a nice channel");
-    */
