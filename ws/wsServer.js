@@ -47,8 +47,7 @@ wsServer.on('request', function(request) {
     });
 
     connection.on('close', function(reasonCode, description) {
-        // manager.remove();
-        console.log('closed');
+        manager.remove(connection.username);
     });
 });
 
