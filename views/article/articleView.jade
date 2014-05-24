@@ -32,10 +32,6 @@ block content
                             comment : $("#comment").val()
                         },
                         function(data){
-                           if(typeof(data.login)!='undefined'){
-                                $("#mycomment").text(" need login ");
-                                return false;
-                           }
                            getComments();
                            //$("#mycomment").text("@myself : " + $("#comment").val());
                         }, 'json'
