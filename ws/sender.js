@@ -9,8 +9,12 @@ exports.broadcast = function(map,msg){
 }
 
 exports.send2username = function(map,sender ,reciever ,msg){
-    console.log(sender + " : " + reciever);
-    map[reciever].sendUTF(sender+":"+msg);
-    map[sender].sendUTF(sender+":"+msg);
-   // connection.sendUTF(msg);
+    var rec_conn =  map[reciever];
+    if(rec_conn!=undefined){
+        map[reciever].sendUTF(sender+":"+msg);
+        map[sender].sendUTF(sender+":"+msg);
+    }else{
+        map[sender].sendUTF("send failed ： no such user");
+    }
+
 }
