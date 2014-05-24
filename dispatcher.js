@@ -61,7 +61,7 @@ app.post("*",function(req,res ,next){
 // request url , oauth.requireUser
 app.get('/' ,routes.index);
 
-app.get('/chathall' ,chat.reghall);
+app.get('/chathall' ,oauth.requireUser,chat.reghall);
 
 //user crud
 app.get('/user/userList', user.userList);
@@ -74,7 +74,7 @@ app.get('/user', user.userList);
 app.get('/article/articleList', article.articleList);
 app.get('/article', article.articleList);
 app.get('/article/articleSet', oauth.requirePoster,article.articleSet);
-app.get('/article/articleForm', article.articleForm);
+app.get('/article/articleForm',oauth.requireUser, article.articleForm);
 app.get('/article/articleGet', article.articleGet);
 
 // vote
