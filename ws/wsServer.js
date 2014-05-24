@@ -35,7 +35,7 @@ wsServer.on('request', function(request) {
             var msg = message.utf8Data;
             if(msg.indexOf("@@")>-1){
                 var content = util.getPeerContent(msg,"@@");
-                sender.send2username(manager.getUCMap(),connection.username,content[0],content[1]);
+                sender.send2username(manager.getUCMap(),connection.username,content[1],content[0]);
             }else{
                 wsServer.broadcast( connection.username +" : " + msg);
             }
