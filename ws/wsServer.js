@@ -32,7 +32,14 @@ wsServer.on('request', function(request) {
     manager.put(username,connection);
     connection.on('message', function(message) {
         if (message.type === 'utf8') {
-            sender.broadcast(manager.getUCMap(), connection.username +" : " + message.utf8Data);
+            var msg = message.utf8Data;
+            if(msg.indexOf("@@")>-1){
+                var content = util.getPeerContent(msg,"@@");
+                sender.send2username(manager.getUCMap(),connection.username,content[0],content[1]);
+            }else{
+                wsServer.broadcast( connection.username +" : " + msg);
+            }
+            //sender.broadcast(manager.getUCMap(), connection.username +" : " + message.utf8Data);
         }
         else if (message.type === 'binary') {
             connection.sendBytes(message.binaryData);
