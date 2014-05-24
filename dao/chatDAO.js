@@ -31,7 +31,6 @@ exports.leaveMsg = function(reciever,msg){
         if(error) {
             console.log(error);
         } else {
-            console.log(" leave msg ---- : " + data);
         }
         client.end();
     });
