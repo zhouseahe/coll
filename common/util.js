@@ -10,6 +10,17 @@ exports.getId = function (arg , sperator){
     }
 }
 
+
+exports.getPeerContent = function (arg , sperator){
+    if(arguments.length<2){
+        console.log(' failed : invalid args ');
+    }else{
+        return arg.split(sperator);
+    }
+}
+
+
+
 exports.getCookieKey = function(cookies , key){
     var map =  cookies.split(';');
     var username ;
