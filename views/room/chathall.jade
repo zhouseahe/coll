@@ -5,9 +5,13 @@ block content
     .username #{session.username}
     .chatting
         ul(id='list')
-
+    .send
     input(type="text",id="words" ,name="words")
-    a(class='send', href='#') | |  发送
+    a(class='send', href='#') | |  发送（所有人）
+    .sendTo
+    input(type="text",id="peerwords" ,name="words")
+    a(class='sendTo', href='#') | |  发送给（用户名）
+    input(type="text",id="target" ,name="rec")
     .button
     a(class='button', href='/') 离开  |
     script.
@@ -27,5 +31,9 @@ block content
               connection.send($("#words").val());
               $("#words").val("");
           });
-
+          $(".sendTo").click(function(){
+              connection.send($("#target").val()+"@@" + $("#peerwords").val());
+              $("#peerwords").val("");
+              $("#target").val("");
+          });
       });
