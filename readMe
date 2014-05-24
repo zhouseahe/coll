@@ -7,3 +7,12 @@
 
 4 \ websocket real time msg , peer msg , online offline notify .
 
+websocket
+
+	1  聊天室发送消息
+	2  connection 绑定 session
+   	3  发送消息到个人
+	4  离线消息支持
+	5  实时在线列表
+
+
