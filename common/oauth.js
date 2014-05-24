@@ -5,7 +5,7 @@
 
 exports.requirePoster = function checkAuth(req, res, next) {
     if (!req.session) {
-        res.send(' you are not editor ' );
+        res.render('login', { title: 'login' });
     } else {
         next();
     }
@@ -13,7 +13,7 @@ exports.requirePoster = function checkAuth(req, res, next) {
 
 exports.requireAdmin = function checkAuth(req, res, next) {
     if (!req.session) {
-        res.send(' you are not admin ' );
+        res.render('login', { title: 'login' });
     } else {
         next();
     }
@@ -22,7 +22,7 @@ exports.requireAdmin = function checkAuth(req, res, next) {
 
 exports.requireUser = function checkAuth(req, res, next) {
     if (!req.session.username) {
-        res.json({ login : '/toLogin'} );
+        res.render('login', { title: 'login' });
     } else {
         next();
     }
