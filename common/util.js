@@ -13,7 +13,7 @@ exports.checkPeerSend = function (msg){
     return msg.indexOf('@@')>0;
 }
 exports.getPeerContent = function (arg){
-    if(arguments.length<2){
+    if(arguments.length<1){
         console.log(' failed : invalid args ');
     }else{
         return arg.split("@@");
