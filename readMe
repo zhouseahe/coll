@@ -7,6 +7,9 @@
 
 4 \ websocket real time msg , peer msg , online offline notify .
 
+express redis
+    文章发表  评论  赞  +　尝试redis 数据库设计
+
 websocket
 
 	1  聊天室发送消息
