@@ -8,6 +8,7 @@ var sender = require('../ws/sender');
 
 var app = require('../app.js');
 var util = require('../common/util');
+var resolveProtocol = require('../common/resolveProtocol');
 
 wsServer = new WebSocketServer({
     httpServer: app.httpServer,
@@ -32,12 +33,12 @@ wsServer.on('request', function(request) {
     manager.put(username,connection);
     //上线时，1、推送所有在线用户   2、仅推送上线用户
     var users = manager.onlineUsers();
-    wsServer.broadcast("@wsXXon"+users);
+    wsServer.broadcast(resolveProtocol.onlineUsers+users);
     connection.on('message', function(message) {
         if (message.type === 'utf8') {
             var msg = message.utf8Data;
-            if(util.checkPeerSend(msg)){
-                var content = util.getPeerContent(msg);
+            if(resolveProtocol.checkPeerSend(msg)){
+                var content = resolveProtocol.getPeerContent(msg);
                 sender.send2username(manager.getUCMap(),connection.username,content[1],content[0]);
             }else{
                 wsServer.broadcast( connection.username +" : " + msg);
@@ -50,8 +51,8 @@ wsServer.on('request', function(request) {
     });
     connection.on('close', function(reasonCode, description) {
         manager.remove(connection.username);
-        //下线时，推送下线用户
-        wsServer.broadcast("@wsXXdn" + username);
+        //下线时，推送下线用户 , 客户端主动关闭 或 断网
+        wsServer.broadcast(resolveProtocol.offlineUser + connection.username);
     });
 });
 
