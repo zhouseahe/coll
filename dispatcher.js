@@ -62,6 +62,7 @@ app.post("*",function(req,res ,next){
 app.get('/' ,routes.index);
 
 app.get('/chathall' ,oauth.requireUser,chat.reghall);
+app.get('/smartChat' ,oauth.requireUser,chat.smartChat);
 
 //user crud
 app.get('/user/userList', user.userList);
