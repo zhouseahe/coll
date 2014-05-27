@@ -5,7 +5,8 @@ var SingletonWebSocket = (function () {
     var instance;
     function createInstance() {
         window.WebSocket = window.WebSocket || window.MozWebSocket;
-        var connection = new WebSocket('ws://192.168.9.58:1988/','seahe');
+        var wsServer = 'ws://'+ document.location.hostname +":" + window.location.port + "/";
+        var connection = new WebSocket(wsServer,'seahe');
         return connection;
     }
     return {
