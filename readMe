@@ -1,4 +1,4 @@
-新东方面试作品 started  2014  5.16
+started  2014  5.16
 
 1 \ create express 3.6 then update express to more high version .
 
@@ -20,6 +20,6 @@ websocket
 	5  实时在线列表
 
 TODO
-    backbone.js refactor front-end  imitate  http://w.qq.com/
+    use backbone.js refactor front-end  imitate  http://w.qq.com/
 
 
