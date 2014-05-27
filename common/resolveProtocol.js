@@ -18,3 +18,7 @@ exports.getPeerContent = function (arg){
 exports.onlineUsers = "@wsXXon";
 // msg  ： leave user send  ， client parse user
 exports.offlineUser ="@wsXXdn";
+
+exports.privateMsg = "（私信）";
+exports.offlineMsg= "(私信,离线消息)";
+exports.sendOffline = "（离线消息已发送）";
