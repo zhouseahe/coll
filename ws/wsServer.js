@@ -53,6 +53,7 @@ wsServer.on('request', function(request) {
         manager.remove(connection.username);
         //下线时，推送下线用户 , 客户端主动关闭 或 断网
         wsServer.broadcast(resolveProtocol.offlineUser + connection.username);
+        wsServer.broadcast( connection.username +" : " +resolveProtocol.left);
     });
 });
 
