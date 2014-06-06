@@ -10,7 +10,7 @@ block content
         .right
             p online
             ul(id='online')
-    .send
+    .contentsend
     input(type="text",id="words" ,name="words")
     a(class='send', href='#')  发送
     .warn
@@ -43,4 +43,15 @@ block content
               connection.send($("#words").val());
               $("#words").val("");
           });
+          $("#online").on("click","li",function(){
+                var username = $(this).attr("id");
+                console.log(' create one chat dialog ');
+          });
+          $("#words").on("keyup",function(e){
+                if(e.keyCode==13){
+                    $(".send").click();
+                    return false;
+                }
+          });
+
       });
