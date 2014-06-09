@@ -2,7 +2,7 @@ extends ../layout
 block content
     h1= title
     .context
-        form(name="input", action="userSet", method="get")
+        form(name="input", action="userSet", method="post")
             | Username:
             input(type="text", name="username")
 

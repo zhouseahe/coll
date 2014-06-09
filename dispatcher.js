@@ -67,7 +67,7 @@ app.get('/smartChat' ,oauth.requireUser,chat.smartChat);
 //user crud
 app.get('/user/userList' ,oauth.requireUser , user.userList);
 app.get('/user/userForm', user.userForm);
-app.get('/user/userSet',oauth.requirePoster, user.userSet);
+app.post('/user/userSet',oauth.requirePoster, user.userSet);
 app.get('/user/userDel', user.userDel);
 app.get('/user', user.userList);
 
