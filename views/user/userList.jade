@@ -2,12 +2,12 @@
 
 extends ../layout
 block content
-    h1= title
+    h1(class='title') = title
     .content
         ul
-        if(users!=null)
-            -var index = 0
-            each val,key in  users
-                li
-                    a(href="userForm?username=#{key}") #{++index} : #{key}: #{val} edit
-                    a(href="userDel?username=#{key}")  : #{key}: #{val} del
+            if(users!=null)
+                -var index = 0
+                each val,key in  users
+                    li
+                        a(href="userForm?username=#{key}") #{++index} : #{key}: #{val} edit
+                        a(href="userDel?username=#{key}")  : #{key}: #{val} del

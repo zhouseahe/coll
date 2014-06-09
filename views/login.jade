@@ -2,7 +2,7 @@ extends layout
 block content
     h1= title
     .context
-        form(name="input", action="login", method="get")
+        form(name="input", action="login", method="post")
             | username:
             input(type="text", name="username")
             | password:

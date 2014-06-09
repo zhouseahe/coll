@@ -65,7 +65,7 @@ app.get('/chathall' ,oauth.requireUser,chat.reghall);
 app.get('/smartChat' ,oauth.requireUser,chat.smartChat);
 
 //user crud
-app.get('/user/userList', user.userList);
+app.get('/user/userList' ,oauth.requireUser , user.userList);
 app.get('/user/userForm', user.userForm);
 app.get('/user/userSet',oauth.requirePoster, user.userSet);
 app.get('/user/userDel', user.userDel);
@@ -88,7 +88,7 @@ app.post('/comment/queryComment', comment.queryComment);
 app.post('/comment/queryCommentJade', comment.queryCommentJade);
 
 // log
-app.get('/login', login.login);
+app.post('/login', login.login);
 app.get('/toLogin', login.toLogin);
 app.get('/logout', login.logout);
 
