@@ -29,9 +29,8 @@ exports.userDel = function(req,res){
 }
 
 exports.userSet = function(req,res){
-    var arg = URL.parse(req.url).query;
-    var username = querystring.parse(arg).username;
-    var pwd = querystring.parse(arg).pwd;
+    var username =  req.param('username');
+    var pwd =  req.param('pwd');
     userDao.set_user(username,pwd,function(data){
          res.render('result', { title: " 操作结果： ",result : data });
     });
