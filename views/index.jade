@@ -1,13 +1,13 @@
 extends layout
 
 block content
-  h1(class='title') = title
+  h1(class='title')= title
   p(class='index') Welcome to #{title}
    .content
       a(class='button', href='http://google.com')  Google
       a(class='button', href='http://redis.io')  Redis
       a(class='button', href='http://http://nodejs.org')  NodeJS
-   .users
+   .content
         a(class='button', href='/user/userForm') 添加用户
         a(class='button', href='/user/userList') 用户列表
    .content

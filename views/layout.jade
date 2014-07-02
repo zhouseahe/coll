@@ -9,6 +9,9 @@ html
     script(src='/javascripts/backbone.js')
     script(src='/javascripts/common.js')
     script(src='/javascripts/websocket.js')
+    script(src='/javascripts/jqplot/jquery.jqplot.min.js')
+    script(src='/javascripts/jqplot/jqplot.pieRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.donutRenderer.min.js')
   body
     a(class='button', href='/') 首页
     a(class='button', href='/chathall') 聊天室
@@ -18,6 +21,7 @@ html
 
     a(class='button', href='/exportDocx') officegen-word
     a(class='button', href='/exportImg') phantom-png
+    a(class='button', href='/jqplot') jqplot
     a(class='label', href='/logout') #{session.username}
         script.
          $("#refresh").click(function(){
