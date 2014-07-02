@@ -25,3 +25,7 @@ exports.pngFile = function (req, res, next) {
         });
     });
 }
+
+exports.jqplot = function(req,res){
+    res.render('jqplot', {});
+}
