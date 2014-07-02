@@ -16,6 +16,7 @@ var vote = require('./routes/vote');
 var comment = require('./routes/comment');
 var chat = require('./routes/chat');
 var login = require('./routes/login');
+var exp = require('./routes/export');
 
 var config   = require('./config');
 var oauth   = require('./common/oauth');
@@ -87,9 +88,17 @@ app.post('/comment/comment',oauth.requireUser, comment.comment);
 app.post('/comment/queryComment', comment.queryComment);
 app.post('/comment/queryCommentJade', comment.queryCommentJade);
 
+// exp
+app.get('/exportDocx', exp.docxStream);
+app.get('/exportImg', exp.pngFile);
+
 // log
 app.post('/login', login.login);
 app.get('/toLogin', login.toLogin);
 app.get('/logout', login.logout);
+
+
+
+
 
 exports.app = app;
