@@ -91,14 +91,12 @@ app.post('/comment/queryCommentJade', comment.queryCommentJade);
 // exp
 app.get('/exportDocx', exp.docxStream);
 app.get('/exportImg', exp.pngFile);
+app.get('/jqplot', exp.jqplot);
 
 // log
 app.post('/login', login.login);
 app.get('/toLogin', login.toLogin);
 app.get('/logout', login.logout);
-
-
-
 
 
 exports.app = app;
