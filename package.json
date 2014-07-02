@@ -13,6 +13,11 @@
     "redis":"*",
     "connect-redis":"*",
     "websocket":"*",
-    "websocket-server": "*"
+    "websocket-server": "*",
+    "officegen":"^0.2.8",
+    "jsdom":"*",
+    "socket.io": "0.9.6",
+    "phantomjs":"*",
+    "node-phantom":"*"
   }
 }
