@@ -15,6 +15,9 @@ html
     a(id="refresh" , class='button' ,href='#') 刷新
     a(class='button', href='/toLogin') 登录
     a(class='button', href='/logout') 退出
+
+    a(class='button', href='/exportDocx') word生成
+    a(class='button', href='/exportImg') img生成
     a(class='label', href='/logout') #{session.username}
         script.
          $("#refresh").click(function(){
