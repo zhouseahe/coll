@@ -23,3 +23,8 @@ TODO
     use backbone.js refactor front-end  imitate  http://w.qq.com/
 
     迁移完毕测试
+
+officegen node-phantom jqplot
+    server generator docx
+    server render a image
+    create chart
