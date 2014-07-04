@@ -10,7 +10,7 @@ exports.docxStream = function (req, res, next) {
         "Content-Type": "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         'Content-disposition': 'attachment; filename='+filename
     });
-    docxService.generatorDocxStream(res);
+    docxService.generatorDocxStream(res,chart);
 
 }
 
