@@ -25,7 +25,7 @@ Service.phantomJqplot = function (chart,filename,callback){
                 }
                 setTimeout(function() {
                     phRouterService.router(ph ,page ,chart,filename,callback);
-                },3000); // 加载页面上的js , 执行ajax
+                },1500); // 加载页面上的js , 执行ajax
             });
         });
     });

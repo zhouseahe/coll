@@ -31,6 +31,10 @@ Service.chartHistogram = function (ph,page ,filename,callback){
                 l.push(pare[0],pare[1]);
                 line.push(l);
             }
+            line = [['Cup Holder Pinion Bob', 7], ['Generic Fog Lamp', 9], ['HDTV Receiver', 15],
+                ['8 Track Control Module', 12], [' Sludge Pump Fourier Modulator', 3],
+                ['Transcender/Spice Rack', 6], ['Hair Spray Danger Indicator', 18]];
+
             var plot = $.jqplot('jqplotchart', [line], {
                 title: 'Concern vs. Occurrance',
                 series:[{renderer:$.jqplot.BarRenderer}],
