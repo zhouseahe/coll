@@ -1,4 +1,13 @@
 extends layout
+block scripts
+    script(src='/javascripts/jqplot/jquery.jqplot.min.js')
+    script(src='/javascripts/jqplot/jqplot.pieRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.donutRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.dateAxisRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.canvasTextRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.canvasAxisTickRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.categoryAxisRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.barRenderer.min.js')
 block content
     div#jqplotchart
         script.
