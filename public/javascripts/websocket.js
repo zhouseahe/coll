@@ -17,4 +17,4 @@ var SingletonWebSocket = (function () {
             return instance;
         }
     };
-})();
+})();//  单例 ，匿名

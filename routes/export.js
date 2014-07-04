@@ -17,8 +17,10 @@ exports.docxStream = function (req, res, next) {
 exports.phantomImage = function (req, res, next) {
     var chart = req.param('chart') || 'chart';
     var filename = chart +'.png';
+    /* 启用下载文件， 否则直接展现图片
     res.setHeader('Content-disposition', 'attachment; filename=' + filename);
     res.setHeader('Content-type', 'image/png');
+    */
     phantomService.phantomJqplot(chart,filename,function(path){
         setTimeout(function(){
             var filestream = fs.createReadStream(path);
