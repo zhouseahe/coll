@@ -89,8 +89,10 @@ app.post('/comment/queryComment', comment.queryComment);
 app.post('/comment/queryCommentJade', comment.queryCommentJade);
 
 // exp
+
+app.get('/phpage', exp.phpage);
 app.get('/exportDocx', exp.docxStream);
-app.get('/exportImg', exp.pngFile);
+app.get('/phantomImage', exp.phantomImage);
 app.get('/jqplot', exp.jqplot);
 
 // log
