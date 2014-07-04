@@ -1,0 +1,32 @@
+extends layout
+block content
+    div#jqplotchart
+        script.
+            $(function () {
+                $("body").html('<input type="hidden" id="chartargs" value="' +
+                              "[['Cup Holder Pinion Bob', 7], ['Generic Fog Lamp', 9], ['HDTV Receiver', 15],"+
+                              "['8 Track Control Module', 12], [' Sludge Pump Fourier Modulator', 3],"+
+                              "['Transcender/Spice Rack', 6], ['Hair Spray Danger Indicator', 18]] "+
+                              '" />' +
+                              '<input type="hidden" id="pageArgs" value="'+
+                              'Cup Holder Pinion Bob,7'+'|'+
+                              'Generic Fog Lamp,9'+'|'+
+                              'HDTV Receiver,15'+'|'+
+                              '8 Track Control Module,12'+'|'+
+                              'Sludge Pump Fourier Modulator,3'+'|'+
+                              'Transcender/Spice Rack,6'+'|'+
+                              'Hair Spray Danger Indicator,18'+
+                              '" />' +
+                              '<input type="hidden" id="filename" value="phantom.png" />' +
+                              '<input type="hidden" id="timewait" value="5000" />' +
+                              '<div id="jqplotchart"></div>');
+
+                $.getScript('./public/javascript/jqplot/jqplot.dateAxisRenderer.min.js');
+                $.getScript('./public/javascript/jqplot/jqplot.canvasTextRenderer.min.js');
+                $.getScript('./public/javascript/jqplot/jqplot.canvasAxisTickRenderer.min.js');
+                $.getScript('./public/javascript/jqplot/jqplot.categoryAxisRenderer.min.js');
+                $.getScript('./public/javascript/jqplot/jqplot.barRenderer.min.js');
+                $.getScript('./public/javascript/jqplot/jqplot.pieRenderer.min.js');
+                $.getScript('./public/javascript/jqplot/jqplot.donutRenderer.min.js');
+
+            });
