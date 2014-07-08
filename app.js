@@ -30,7 +30,7 @@ if(cluster.isMaster){
     });
     httpServer.listen(app.post('port'),function(){
         console.log('Express server listening on port ' + app.get('port'));
-        console.log(process.env);
+        //console.log(process.env);//NODE_CLUSTER_ID
     });
 }
 
