@@ -15,9 +15,8 @@
     "websocket":"*",
     "websocket-server": "*",
     "officegen":"^0.2.8",
-    "jsdom":"*",
-    "socket.io": "0.9.6",
     "phantomjs":"*",
-    "node-phantom":"*"
+    "node-phantom":"*",
+    "pdc":"*"
   }
 }
