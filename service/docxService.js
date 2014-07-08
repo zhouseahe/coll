@@ -56,7 +56,7 @@ Service.generatorDocxFile = function (callback){
     insertContent(docx , 'vps同学你好1：', { bold: true, underline: true , color: 'red'});
     insertContent(docx , '  经过一段时间的学习，您的成绩飞速提高，不过不要骄傲哦，继续努力！');
     //docx.putPageBreak ();
-    insertImg(docx ,'export/',  'xdf.jpg');
+    //insertImg(docx ,'export/',  'xdf.jpg');
     var out = fs.createWriteStream ( 'export/feed.docx' );// 打开可写入文件，
     out.on ( 'error', function ( err ) {
         console.log ( err );
