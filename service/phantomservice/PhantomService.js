@@ -19,6 +19,15 @@ Service.phantomJqplot = function (chart,filename,callback){
             page.onConsoleMessage = function (msg) {
                 console.log('page.evaluate console.log :  ' + msg);
             };
+            page.onCallback = function(data) {// data can be useful
+                var imagepath = 'export/ph/'+filename;
+                //var imagepath = filename;
+                page.render(imagepath);
+                ph.exit();
+                if(callback!=undefined){
+                    callback(imagepath);
+                }
+            };
             page.open("http://localhost:1988/phpage" , function(err,status) {
                 if(err){
                     console.log(' page.open error : ' + err);
@@ -28,7 +37,7 @@ Service.phantomJqplot = function (chart,filename,callback){
                 },1500); // 加载页面上的js , 执行ajax
             });
         });
-    });
+    },{phantomPath:require('phantomjs').path});
 }
 
 module.exports = Service;
