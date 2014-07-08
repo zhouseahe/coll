@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var officegen = require('officegen');
-var phantomService = require('../service/phantomservice/PhantomService');
+var phantomService = require('../service/phantomService');
 var Service = {};
 
 function insertHeader(docx ,head,style){
@@ -68,7 +68,7 @@ Service.generatorDocxFile = function (callback){
  * 返回stream ， 不生成服务端文件
  * @param callback
  */
-Service.generatorDocxStream = function (res,chart){
+Service.generatorDocxStream = function (res,fpath){
     var docx = officegen ( 'docx' );
     docx.on ( 'finalize', function ( written ) {// 完成时 ，调用下载功能
         console.log('finished...');
@@ -80,13 +80,9 @@ Service.generatorDocxStream = function (res,chart){
     insertHeader(docx,'每日反馈',{ font_face: 'Arial', font_size: 40 });
     insertContent(docx , '同学你好：', { bold: true, underline: true , color: 'red'});
     insertContent(docx , '  经过一段时间的学习，您的成绩飞速提高，不过不要骄傲哦，继续努力！');
-    //insertImg(docx ,'export/',  'xdf.jpg');
-    var filename = chart + '.png';
-    phantomService.phantomJqplot(chart,filename,function(){
-        setTimeout(function(){
-            insertImg(docx ,'export/ph/',  filename);
-            docx.generate (res);//docx 写到response
-        },500);
+    phantomService.phantomJqplot(fpath,function(){
+        insertImg(docx ,fpath);
+        docx.generate (res);//docx 写到response
     });
 }
 module.exports = Service;
