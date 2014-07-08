@@ -24,7 +24,5 @@ TODO
 
     迁移完毕测试
 
-officegen node-phantom jqplot
-    server generator docx
-    server render a image
-    create chart
+officegen node-phantom jqplot pandoc
+
