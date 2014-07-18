@@ -22,6 +22,9 @@ exports.leavehall = function (req,res){
     res.render('index', { title : ' say what you want' });
 }
 
+exports.smartChat = function (req,res){
+}
+
 exports.queryChat =  function (req,res){
 
 }
