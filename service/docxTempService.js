@@ -51,6 +51,8 @@ Service.generatorDocx = function(template,target ,callback){
      adviceArr[0] = {advice:'1. You have do a good job in choice. '};
      adviceArr[1] = {advice:'2. Your hands writing is poor.'};
      tags.advices= adviceArr;
+
+
      */
 
     var image ="export/image/image.png";
