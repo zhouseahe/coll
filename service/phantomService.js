@@ -1,5 +1,6 @@
 var fs = require("fs");
-var phantom=require('node-phantom');
+//var phantom=require('node-phantom');
+var phantom=require('node-phantom-simple');
 var Service = {};
 
 Service.phantomJqplot = function (filepath ,callback){
