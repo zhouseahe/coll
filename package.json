@@ -17,6 +17,7 @@
     "officegen":"^0.2.8",
     "phantomjs":"*",
     "node-phantom":"*",
+    "node-phantom-simple":"1.2.0",
     "pdc":"*"
   }
 }
