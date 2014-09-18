@@ -19,10 +19,5 @@ websocket
 	4  离线消息支持
 	5  实时在线列表
 
-TODO
-    use backbone.js refactor front-end  imitate  http://w.qq.com/
-
-    迁移完毕测试
-
-officegen node-phantom jqplot pandoc
+this project started when i begin to learn node .  its ugly. 
 
