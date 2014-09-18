@@ -6,7 +6,6 @@ var numCpus = require('os').cpus().length;
 var http = require('http');
 var app = require('./dispatcher.js').app;
 
-// https
 /*
 var options = {
     key: fs.readFileSync('./key.pem'),
