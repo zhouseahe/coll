@@ -1,5 +1,5 @@
 /**
- * Created by acer on 14-5-16.
+ * Created by   on 14-5-16.
  */
 var commentDAO = require('../dao/commentDAO');
 var util = require('../common/util');
