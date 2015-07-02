@@ -1,0 +1,26 @@
+.chatting{
+    border: solid 1px red;
+    overflow-y:scroll;
+    height:300px;
+}
+.left{
+    width:60%;
+    float:left;
+    color:green;
+    height:300px;
+}
+.split{
+    width:2px;
+    float:left;
+    background-color:#808080;
+    height:300px;
+}
+.right{
+    width:30%;
+    float:left;
+    color:blue;
+    height:300px;
+}
+.warn{
+    color:red;
+}

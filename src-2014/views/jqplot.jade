@@ -1,0 +1,33 @@
+extends layout
+block scripts
+    script(src='/javascripts/jqplot/jquery.jqplot.min.js')
+    script(src='/javascripts/jqplot/jqplot.pieRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.donutRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.dateAxisRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.canvasTextRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.canvasAxisTickRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.categoryAxisRenderer.min.js')
+    script(src='/javascripts/jqplot/jqplot.barRenderer.min.js')
+block content
+        div#chart
+            script.
+                $(function () {
+                    var data = [
+                        ['SAT', 12],['BEC', 9], ['GMAT', 14],
+                        ['GRE', 16],['CET', 7], ['IELTS', 9]
+                    ];
+                    var plot = $.jqplot('chart', [data],
+                        {
+                            seriesDefaults: {
+                                // Make this a pie chart.
+                                renderer: $.jqplot.PieRenderer,
+                                rendererOptions: {
+                                    // Put data labels on the pie slices.
+                                    // By default, labels show the percentage of the slice.
+                                    showDataLabels: true
+                                }
+                            },
+                            legend: { show:true, location: 'e' }
+                        }
+                    );
+                });

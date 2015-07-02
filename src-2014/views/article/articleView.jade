@@ -1,0 +1,69 @@
+extends ../layout
+block content
+    h1= title
+    .context
+       p  #{result}
+        input(type="hidden",id="articleKey", value="#{articleKey}")
+        .context
+            a(class="vote",href="#",key="#{articleKey}") span (赞)
+            span(id="votes")
+        .context
+            input(type="text",id="comment",placeholder='say something...')
+            a(class="comment",href="#") (评论)
+        #context
+            p(id="mycomment")
+            p(id="comments")
+            script.
+                $(".vote").click(function(){
+                    $.post(
+                        '../vote/vote',
+                        {articleKey:$("#articleKey").val()},
+                        function(data){
+                            getVotes();
+                           // $("#votes").text("(" + data.result+"人已赞" + ")");
+                        }, 'json'
+                    );
+                 });
+                $(".comment").click(function(){
+                    $.post(
+                        '../comment/comment',
+                        {
+                            articleKey:$("#articleKey").val(),
+                            comment : $("#comment").val()
+                        },
+                        function(data){
+                           getComments();
+                           //$("#mycomment").text("@myself : " + $("#comment").val());
+                        }, 'json'
+                    );
+                 });
+                 function getVotes(){
+                     var key = $("#articleKey").val();
+                        $.post(
+                        '../vote/countVote',
+                        {
+                             articleKey:$("#articleKey").val()
+                        },
+                            function(data){
+                                $("#votes").text("(" + data.result+"人已赞" + ")");
+                            }, 'json'
+                            );
+                 }
+                 function getComments(){
+                    var key = $("#articleKey").val();
+                    $.post(
+                        '../comment/queryComment',
+                        {
+                            articleKey:$("#articleKey").val()
+                        },
+                        function(data){
+                            var cs = " ";
+                            $.each( data.result, function( key, value ) {
+                              cs =  '<br/> ' + "@" +  key + "- -" + value + " , " + cs;
+                            });
+                           $("#comments").html(cs);
+                        }, 'json'
+                    );
+                 }
+                 getVotes();
+                 getComments();

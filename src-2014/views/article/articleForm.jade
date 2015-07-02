@@ -1,0 +1,12 @@
+extends ../layout
+block content
+    h1= title
+    .context
+        form(name="input", action="articleSet", method="get")
+            | title:
+            input(type="text", name="title")
+            | link:
+            input(type="text", name="link")
+            | poster:
+            input(type="text", name="poster")
+            input(type="submit", value="save")

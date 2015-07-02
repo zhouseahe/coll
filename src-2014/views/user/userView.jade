@@ -1,0 +1,11 @@
+
+extends ../layout
+block content
+    h1= title
+    .context
+        form(name="input", action="userSet", method="get")
+            | Username:
+            input(type="text", name="username" value=user.username)
+            | Password:
+            input(type="text", name="pwd" value=user.pwd)
+            input(type="submit", value="save")
