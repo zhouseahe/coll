@@ -3,8 +3,8 @@
  */
 var WebSocketServer = require('websocket').server;
 
-var manager = require('../ws/manager');
-var sender = require('../ws/sender');
+var manager = require('manager');
+var sender = require('sender');
 
 var app = require('../app.js');
 var util = require('../common/util');
